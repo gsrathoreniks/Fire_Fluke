@@ -48,7 +48,7 @@ public class SettingsActivity extends AppCompatActivity {
 
                 displayName.setText(name);
                 displayStatus.setText(status);
-                
+
 
             }
 

@@ -52,6 +52,7 @@ class SectionPageAdapter extends FragmentPagerAdapter {
             case 0:
                 return "REQUESTS";
 
+
             case 1:
                 return "CHATS";
 

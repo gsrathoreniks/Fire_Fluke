@@ -10,15 +10,20 @@
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:id="@+id/appBarLayout">
 
         <include
             layout="@layout/app_bar"
-            android:id="@+id/tool_bar"/>
+            android:id="@+id/tool_bar"
+            />
 
         <android.support.design.widget.TabLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:tabTextColor="#adabab"
+            app:tabMode="fixed"
+            app:tabSelectedTextColor="#fff"
             android:id="@+id/tabLayout">
 
         </android.support.design.widget.TabLayout>

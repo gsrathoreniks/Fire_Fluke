@@ -25,7 +25,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button login;
     private FirebaseAuth mAuth;
 
-    private ProgressDialog progressBar;
+    private ProgressDialog progressDialog;
 
 
     @Override
@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         // Toolbar
 
-        progressBar = new ProgressDialog(this);
+        progressDialog = new ProgressDialog(this);
 
         email = findViewById(R.id.email_login);
         pass = findViewById(R.id.pass_login);
@@ -57,10 +57,11 @@ public class LoginActivity extends AppCompatActivity {
 
                 if(!TextUtils.isEmpty(loginEmail) || !TextUtils.isEmpty(loginPass))
                 {
-                    progressBar.setTitle("Logging In !");
-                    progressBar.setMessage("Please wait while check your credentials");
-                    progressBar.setCanceledOnTouchOutside(false);
-                    progressBar.show();
+                    progressDialog.setTitle("Logging In !");
+                    progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+                    progressDialog.setMessage("Please wait while check your credentials");
+                    progressDialog.setCanceledOnTouchOutside(false);
+                    progressDialog.show();
 
                     signInUser(loginEmail,loginPass);
                 }
@@ -82,7 +83,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (task.isSuccessful())
                 {
-                    progressBar.dismiss();
+                    progressDialog.dismiss();
                     Intent act= new Intent(LoginActivity.this,MainActivity.class);
                     act.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(act);
@@ -92,7 +93,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 else
                 {
-                    progressBar.hide();
+                    progressDialog.hide();
                     Toast.makeText(LoginActivity.this,"Credentials provided are wrong! Please check.",Toast.LENGTH_LONG).show();
                 }
 

@@ -30,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mtoolbar = findViewById(R.id.tool_bar);
         setSupportActionBar(mtoolbar);
-        getSupportActionBar().setTitle("Fire Chat");
+        getSupportActionBar().setTitle("Fire Fluke");
+
 
         viewPager = findViewById(R.id.viewPagerMain);
         sectionPageAdapter = new SectionPageAdapter(getSupportFragmentManager());
